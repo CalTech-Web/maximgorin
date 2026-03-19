@@ -44,7 +44,7 @@ export default function ContactContent() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="pt-28 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-br from-primary-dark via-primary to-primary-light">
+      <section className="pt-32 pb-20 sm:pt-40 sm:pb-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}

@@ -16,8 +16,8 @@ export default function BlogPostLayout({ title, image, imageAlt, children }: Blo
   return (
     <>
       {/* Hero Banner */}
-      <section className="pt-28 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-br from-primary-dark via-primary to-primary-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pt-32 pb-20 sm:pt-40 sm:pb-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function BlogPostLayout({ title, image, imageAlt, children }: Blo
       </section>
 
       {/* Breadcrumbs */}
-      <nav className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-text" aria-label="Breadcrumb">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-text" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2">
           <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
           <li>/</li>
@@ -40,7 +40,7 @@ export default function BlogPostLayout({ title, image, imageAlt, children }: Blo
 
       {/* Article */}
       <article className="py-12 sm:py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Featured Image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
