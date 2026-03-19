@@ -44,13 +44,13 @@ export default function HeroSection() {
         >
           <Link
             href="/about"
-            className="px-8 py-3.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-light hover:scale-105 transition-all shadow-lg shadow-accent/20"
+            className="px-8 py-3.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-light hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30"
           >
             Learn More
           </Link>
           <Link
             href="/press"
-            className="px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all"
+            className="px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 hover:scale-105 transition-all duration-300"
           >
             Press & Media
           </Link>

@@ -32,7 +32,7 @@ export default function BlogPostLayout({ title, image, imageAlt, children }: Blo
       {/* Breadcrumbs */}
       <nav className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-text" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2">
-          <li><a href="/" className="hover:text-accent transition-colors">Home</a></li>
+          <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
           <li>/</li>
           <li className="text-heading font-medium truncate">{title}</li>
         </ol>

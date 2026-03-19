@@ -53,7 +53,7 @@ export default function PressPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="group flex items-start gap-4 p-5 rounded-xl bg-cream hover:bg-warm-gray hover:shadow-md transition-all"
+              className="group flex items-start gap-4 p-5 rounded-xl bg-cream hover:bg-warm-gray hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
               <div className="flex-1">
                 <p className="text-xs font-semibold text-accent uppercase tracking-wider">{item.outlet}</p>
@@ -61,7 +61,7 @@ export default function PressPreview() {
                   {item.title}
                 </p>
               </div>
-              <ExternalLink size={16} className="text-gray-400 group-hover:text-accent transition-colors mt-1 shrink-0" />
+              <ExternalLink size={16} className="text-gray-400 group-hover:text-accent group-hover:scale-110 transition-all duration-300 mt-1 shrink-0" />
             </motion.a>
           ))}
         </div>

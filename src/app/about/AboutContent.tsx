@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Award, Briefcase, Heart, Shield } from "lucide-react";
 
 const highlights = [
@@ -39,7 +40,7 @@ export default function AboutContent() {
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-text" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2">
-          <li><a href="/" className="hover:text-accent transition-colors">Home</a></li>
+          <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
           <li>/</li>
           <li className="text-heading font-medium">About</li>
         </ol>
@@ -56,10 +57,10 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex items-start gap-4 p-5 rounded-xl bg-cream group hover:shadow-md transition-all"
+                className="flex items-start gap-4 p-5 rounded-xl bg-cream group hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="p-2.5 bg-primary/10 rounded-lg group-hover:bg-accent/10 transition-colors">
-                  <item.icon size={22} className="text-primary group-hover:text-accent transition-colors" />
+                <div className="p-2.5 bg-primary/10 rounded-lg group-hover:bg-accent/10 transition-all duration-300">
+                  <item.icon size={22} className="text-primary group-hover:text-accent group-hover:scale-110 transition-all duration-300" />
                 </div>
                 <div>
                   <p className="font-semibold text-heading text-sm">{item.label}</p>

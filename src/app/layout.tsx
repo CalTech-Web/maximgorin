@@ -61,6 +61,31 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Maxim Gorin",
+              alternateName: "Max Gorin",
+              url: "https://maximgorin.com",
+              image: "https://maximgorin.com/images/profile.jpg",
+              jobTitle: "CEO",
+              worksFor: [
+                { "@type": "Organization", name: "MGME Consulting" },
+                { "@type": "Organization", name: "LifeLine Ambulance" },
+              ],
+              alumniOf: {
+                "@type": "EducationalOrganization",
+                name: "UCLA Anderson School of Management",
+              },
+              sameAs: [],
+              description:
+                "Entrepreneur, EMT, and community leader. Co-founder of LifeLine Ambulance and CEO of MGME Consulting.",
+            }),
+          }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

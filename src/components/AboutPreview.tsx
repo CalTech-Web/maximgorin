@@ -61,7 +61,7 @@ export default function AboutPreview() {
             </p>
             <Link
               href="/about"
-              className="inline-block mt-8 px-7 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-light hover:scale-105 transition-all shadow-md"
+              className="inline-block mt-8 px-7 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-light hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Full Biography
             </Link>

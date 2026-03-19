@@ -7,20 +7,42 @@ export const metadata: Metadata = {
     "Explore key leadership qualities including motivation, delegation, vision-setting, and collaboration that make great business leaders.",
   alternates: { canonical: "https://maximgorin.com/blog/how-to-be-a-great-leader-for-your-business" },
   openGraph: {
+    type: "article",
     title: "How to Be a Great Leader for Your Business",
     description:
       "Explore key leadership qualities that make great business leaders.",
     images: [{ url: "/images/business-leader.jpg", width: 1200, height: 630, alt: "Business Leadership" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Be a Great Leader for Your Business",
+    description:
+      "Explore key leadership qualities that make great business leaders.",
+    images: ["/images/business-leader.jpg"],
+  },
 };
 
 export default function BusinessLeaderPost() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How to Be a Great Leader for Your Business",
+    image: "https://maximgorin.com/images/business-leader.jpg",
+    author: { "@type": "Person", name: "Maxim Gorin", url: "https://maximgorin.com" },
+    publisher: { "@type": "Person", name: "Maxim Gorin" },
+    url: "https://maximgorin.com/blog/how-to-be-a-great-leader-for-your-business",
+    description:
+      "Explore key leadership qualities including motivation, delegation, vision-setting, and collaboration that make great business leaders.",
+  };
+
   return (
-    <BlogPostLayout
-      title="How to Be a Great Leader for Your Business"
-      image="/images/business-leader.jpg"
-      imageAlt="Business leadership concept"
-    >
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BlogPostLayout
+        title="How to Be a Great Leader for Your Business"
+        image="/images/business-leader.jpg"
+        imageAlt="Business leadership concept"
+      >
       <p>
         Effective leadership is the capacity to inspire people to work together, motivate staff
         members, and help them recognize their capabilities. Strong leaders delegate effectively,
@@ -94,6 +116,7 @@ export default function BusinessLeaderPost() {
         transparency, involve staff in decision-making, distribute recognition, and understand
         their dependence on employees. Leadership is not a title - it is a daily practice.
       </p>
-    </BlogPostLayout>
+      </BlogPostLayout>
+    </>
   );
 }

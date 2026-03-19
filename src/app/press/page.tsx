@@ -12,6 +12,13 @@ export const metadata: Metadata = {
       "Featured press articles, interviews, and media coverage of Maxim Gorin.",
     images: [{ url: "/images/profile.jpg", width: 1200, height: 630, alt: "Maxim Gorin" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Press & Media - Maxim Gorin",
+    description:
+      "Featured press articles, interviews, and media coverage of Maxim Gorin.",
+    images: ["/images/profile.jpg"],
+  },
 };
 
 export default function PressPage() {

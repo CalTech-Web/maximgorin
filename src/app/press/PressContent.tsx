@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
 const pressItems = [
@@ -79,7 +80,7 @@ export default function PressContent() {
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-text" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2">
-          <li><a href="/" className="hover:text-accent transition-colors">Home</a></li>
+          <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
           <li>/</li>
           <li className="text-heading font-medium">Press</li>
         </ol>
@@ -99,7 +100,7 @@ export default function PressContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="group flex items-center justify-between gap-4 p-6 rounded-xl bg-white hover:shadow-lg border border-gray-100 hover:border-accent/20 transition-all"
+                className="group flex items-center justify-between gap-4 p-6 rounded-xl bg-white hover:shadow-lg hover:-translate-y-0.5 border border-gray-100 hover:border-accent/20 transition-all duration-300"
               >
                 <div className="flex-1">
                   <p className="text-xs font-bold text-accent uppercase tracking-wider">{item.outlet}</p>
@@ -109,7 +110,7 @@ export default function PressContent() {
                 </div>
                 <ExternalLink
                   size={18}
-                  className="text-gray-400 group-hover:text-accent transition-colors shrink-0"
+                  className="text-gray-400 group-hover:text-accent group-hover:scale-110 transition-all duration-300 shrink-0"
                 />
               </motion.a>
             ))}

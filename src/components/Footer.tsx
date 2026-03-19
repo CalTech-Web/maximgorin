@@ -66,7 +66,7 @@ export default function Footer() {
               href="https://caltechweb.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent hover:text-accent-light transition-colors"
+              className="text-accent hover:text-accent-light transition-colors duration-300"
             >
               CalTech Web
             </a>

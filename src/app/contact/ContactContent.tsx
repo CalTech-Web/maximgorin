@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Send, CheckCircle } from "lucide-react";
 
 export default function ContactContent() {
@@ -12,6 +13,9 @@ export default function ContactContent() {
     setStatus("sending");
 
     const form = e.currentTarget;
+    const honeypot = (form.elements.namedItem("website") as HTMLInputElement).value;
+    if (honeypot) return;
+
     const data = {
       site: "maximgorin.com",
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
@@ -64,7 +68,7 @@ export default function ContactContent() {
       {/* Breadcrumbs */}
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-text" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2">
-          <li><a href="/" className="hover:text-accent transition-colors">Home</a></li>
+          <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
           <li>/</li>
           <li className="text-heading font-medium">Contact</li>
         </ol>
@@ -91,6 +95,12 @@ export default function ContactContent() {
               transition={{ duration: 0.5 }}
               className="space-y-6"
             >
+              {/* Honeypot field - hidden from users */}
+              <div className="absolute opacity-0 h-0 overflow-hidden" aria-hidden="true" tabIndex={-1}>
+                <label htmlFor="website">Website</label>
+                <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-heading mb-1.5">
                   Full Name
@@ -140,7 +150,7 @@ export default function ContactContent() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-light hover:scale-[1.02] transition-all shadow-lg shadow-accent/20 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-light hover:scale-[1.02] transition-all duration-300 shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <Send size={18} />
                 {status === "sending" ? "Sending..." : "Send Message"}

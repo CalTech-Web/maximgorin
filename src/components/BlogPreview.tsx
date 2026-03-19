@@ -46,7 +46,7 @@ export default function BlogPreview() {
               transition={{ duration: 0.5, delay: i * 0.15 }}
             >
               <Link href={`/blog/${post.slug}`} className="group block">
-                <div className="relative aspect-[16/10] rounded-xl overflow-hidden shadow-lg">
+                <div className="relative aspect-[16/10] rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                   <Image
                     src={post.image}
                     alt={post.title}

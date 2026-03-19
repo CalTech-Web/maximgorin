@@ -7,20 +7,42 @@ export const metadata: Metadata = {
     "First responders are police officers, firefighters, and EMTs who arrive first during emergencies. Learn about their vital role and how communities can support them.",
   alternates: { canonical: "https://maximgorin.com/blog/first-responders-critical-to-our-communities" },
   openGraph: {
+    type: "article",
     title: "First Responders: Critical to Our Communities",
     description:
       "Learn about the vital role of first responders and how communities can support them.",
     images: [{ url: "/images/first-responders.jpg", width: 1200, height: 630, alt: "First Responders" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "First Responders: Critical to Our Communities",
+    description:
+      "Learn about the vital role of first responders and how communities can support them.",
+    images: ["/images/first-responders.jpg"],
+  },
 };
 
 export default function FirstRespondersPost() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "First Responders: Critical to Our Communities",
+    image: "https://maximgorin.com/images/first-responders.jpg",
+    author: { "@type": "Person", name: "Maxim Gorin", url: "https://maximgorin.com" },
+    publisher: { "@type": "Person", name: "Maxim Gorin" },
+    url: "https://maximgorin.com/blog/first-responders-critical-to-our-communities",
+    description:
+      "First responders are police officers, firefighters, and EMTs who arrive first during emergencies. Learn about their vital role and how communities can support them.",
+  };
+
   return (
-    <BlogPostLayout
-      title="First Responders: Critical to Our Communities"
-      image="/images/first-responders.jpg"
-      imageAlt="First responders in action"
-    >
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BlogPostLayout
+        title="First Responders: Critical to Our Communities"
+        image="/images/first-responders.jpg"
+        imageAlt="First responders in action"
+      >
       <p>
         First responders are essential community members who arrive first during emergencies and
         save lives daily. Their work often goes unrecognized despite its critical importance. In this
@@ -77,6 +99,7 @@ export default function FirstRespondersPost() {
         daily lives. Whether through volunteering, donations, or simply showing gratitude, every
         bit of support makes a difference.
       </p>
-    </BlogPostLayout>
+      </BlogPostLayout>
+    </>
   );
 }
