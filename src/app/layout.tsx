@@ -48,6 +48,12 @@ export const metadata: Metadata = {
       "Entrepreneur, EMT, and community leader. Co-founder of LifeLine Ambulance and CEO of MGME Consulting.",
     images: ["/images/profile.jpg"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/favicon.svg" }],
+  },
   alternates: {
     canonical: "https://maximgorin.com",
   },

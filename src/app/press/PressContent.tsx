@@ -56,8 +56,8 @@ export default function PressContent() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="pt-32 pb-20 sm:pt-40 sm:pb-28 bg-gradient-to-br from-primary-dark via-primary to-primary-light">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="min-h-[400px] flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light pt-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

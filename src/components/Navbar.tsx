@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
@@ -9,7 +10,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/press", label: "Press" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -37,9 +37,18 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link
             href="/"
-            className="text-xl sm:text-2xl font-serif font-bold text-primary-dark tracking-tight hover:text-accent transition-colors duration-300"
+            className="flex items-center gap-2.5 group"
           >
-            Maxim Gorin
+            <Image
+              src="/favicon.svg"
+              alt="MG"
+              width={36}
+              height={36}
+              className="rounded-lg group-hover:scale-110 group-hover:rotate-[-3deg] transition-all duration-300"
+            />
+            <span className="text-xl sm:text-2xl font-serif font-bold text-primary-dark tracking-tight group-hover:text-accent transition-colors duration-300">
+              Maxim Gorin
+            </span>
           </Link>
 
           {/* Desktop Nav */}
