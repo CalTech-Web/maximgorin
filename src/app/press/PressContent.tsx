@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
@@ -56,8 +57,17 @@ export default function PressContent() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="min-h-[400px] flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light pt-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+      <section className="relative min-h-[400px] flex items-center pt-20 overflow-hidden">
+        <Image
+          src="/images/press-hero-bg.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/85 to-primary-light/80" />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
