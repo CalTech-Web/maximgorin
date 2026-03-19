@@ -48,7 +48,7 @@ export default function BlogPostLayout({ title, image, imageAlt, children }: Blo
             transition={{ duration: 0.6 }}
             className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-xl mb-10"
           >
-            <Image src={image} alt={imageAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" priority />
+            <Image src={image} alt={imageAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 800px" />
           </motion.div>
 
           {/* Content */}

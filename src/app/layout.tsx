@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -7,12 +7,21 @@ import Footer from "@/components/Footer";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#1a3a5c",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maximgorin.com"),
@@ -32,6 +41,17 @@ export const metadata: Metadata = {
     "community leader",
     "Los Angeles",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -49,11 +69,10 @@ export const metadata: Metadata = {
     images: ["/images/profile.jpg"],
   },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     apple: [{ url: "/favicon.svg" }],
   },
+  manifest: "/site.webmanifest",
   alternates: {
     canonical: "https://maximgorin.com",
   },
@@ -86,6 +105,12 @@ export default function RootLayout({
                 "@type": "EducationalOrganization",
                 name: "UCLA Anderson School of Management",
               },
+              knowsAbout: [
+                "Emergency Medical Services",
+                "Business Consulting",
+                "Community Leadership",
+                "Nonprofit Management",
+              ],
               sameAs: [],
               description:
                 "Entrepreneur, EMT, and community leader. Co-founder of LifeLine Ambulance and CEO of MGME Consulting.",

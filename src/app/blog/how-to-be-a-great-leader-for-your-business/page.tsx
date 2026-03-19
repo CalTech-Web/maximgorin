@@ -30,7 +30,13 @@ export default function BusinessLeaderPost() {
     image: "https://maximgorin.com/images/business-leader.jpg",
     author: { "@type": "Person", name: "Maxim Gorin", url: "https://maximgorin.com" },
     publisher: { "@type": "Person", name: "Maxim Gorin" },
+    datePublished: "2024-01-20",
+    dateModified: "2024-01-20",
     url: "https://maximgorin.com/blog/how-to-be-a-great-leader-for-your-business",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://maximgorin.com/blog/how-to-be-a-great-leader-for-your-business",
+    },
     description:
       "Explore key leadership qualities including motivation, delegation, vision-setting, and collaboration that make great business leaders.",
   };

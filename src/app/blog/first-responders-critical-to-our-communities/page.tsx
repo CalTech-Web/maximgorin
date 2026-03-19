@@ -30,7 +30,13 @@ export default function FirstRespondersPost() {
     image: "https://maximgorin.com/images/first-responders.jpg",
     author: { "@type": "Person", name: "Maxim Gorin", url: "https://maximgorin.com" },
     publisher: { "@type": "Person", name: "Maxim Gorin" },
+    datePublished: "2024-01-15",
+    dateModified: "2024-01-15",
     url: "https://maximgorin.com/blog/first-responders-critical-to-our-communities",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://maximgorin.com/blog/first-responders-critical-to-our-communities",
+    },
     description:
       "First responders are police officers, firefighters, and EMTs who arrive first during emergencies. Learn about their vital role and how communities can support them.",
   };
