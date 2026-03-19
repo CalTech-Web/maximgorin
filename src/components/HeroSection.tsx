@@ -1,11 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] pt-20 flex items-center justify-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
+    <section className="relative min-h-[90vh] pt-20 flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt=""
+        fill
+        className="object-cover"
+        sizes="100vw"
+        priority
+      />
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/85 to-primary-light/80" />
       {/* Decorative circles */}
       <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-accent/5" />
       <div className="absolute bottom-[-15%] left-[-10%] w-[600px] h-[600px] rounded-full bg-white/5" />
