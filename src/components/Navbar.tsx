@@ -42,13 +42,11 @@ export default function Navbar() {
             className="flex items-center gap-2.5 group"
           >
             <Image
-              src="/favicon.svg"
+              src={scrolled ? "/favicon.svg" : "/favicon-white.svg"}
               alt="MG"
               width={36}
               height={36}
-              className={`rounded-lg group-hover:scale-110 group-hover:rotate-[-3deg] transition-all duration-300 ${
-                scrolled ? "" : "brightness-0 invert"
-              }`}
+              className="rounded-lg group-hover:scale-110 group-hover:rotate-[-3deg] transition-all duration-300"
             />
             <span
               className={`text-xl sm:text-2xl font-serif font-bold tracking-tight group-hover:text-accent transition-colors duration-300 ${

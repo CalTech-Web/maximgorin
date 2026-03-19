@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Newspaper } from "lucide-react";
 
 const pressItems = [
   {
@@ -29,50 +30,69 @@ const pressItems = [
 
 export default function PressPreview() {
   return (
-    <section className="py-20 sm:py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-14"
-        >
-          <p className="text-accent font-medium tracking-widest uppercase text-sm mb-3">In The News</p>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-heading">Press & Media</h2>
-        </motion.div>
+    <section className="relative py-20 sm:py-28 overflow-hidden">
+      {/* Background Image */}
+      <Image
+        src="/images/press-preview-bg.jpg"
+        alt=""
+        fill
+        className="object-cover"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/92 via-primary-dark/88 to-primary/80" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {pressItems.map((item, i) => (
-            <motion.a
-              key={i}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="group flex items-start gap-4 p-5 rounded-xl bg-cream hover:bg-warm-gray hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+          {/* Left - Header */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-2"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
+              <Newspaper size={14} />
+              In The News
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
+              Press &<br />Media
+            </h2>
+            <p className="text-white/70 leading-relaxed mb-8">
+              Featured in top publications for leadership in emergency services and community impact.
+            </p>
+            <Link
+              href="/press"
+              className="inline-block px-7 py-3 bg-accent text-white font-semibold rounded-full hover:bg-accent-light hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30"
             >
-              <div className="flex-1">
-                <p className="text-xs font-semibold text-accent uppercase tracking-wider">{item.outlet}</p>
-                <p className="mt-1.5 text-sm font-medium text-heading group-hover:text-primary-light transition-colors leading-snug">
+              View All Press
+            </Link>
+          </motion.div>
+
+          {/* Right - Press Cards */}
+          <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {pressItems.map((item, i) => (
+              <motion.a
+                key={i}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="group block p-5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 hover:bg-white/20 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-xs font-bold text-accent uppercase tracking-wider">{item.outlet}</p>
+                  <ExternalLink size={14} className="text-white/40 group-hover:text-accent group-hover:scale-110 transition-all duration-300 shrink-0 mt-0.5" />
+                </div>
+                <p className="mt-2 text-sm font-medium text-white/90 group-hover:text-white transition-colors leading-snug">
                   {item.title}
                 </p>
-              </div>
-              <ExternalLink size={16} className="text-gray-400 group-hover:text-accent group-hover:scale-110 transition-all duration-300 mt-1 shrink-0" />
-            </motion.a>
-          ))}
-        </div>
-
-        <div className="text-center mt-10">
-          <Link
-            href="/press"
-            className="inline-block px-7 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-light hover:scale-105 transition-all shadow-md"
-          >
-            View All Press
-          </Link>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

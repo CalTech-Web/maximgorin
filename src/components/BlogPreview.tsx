@@ -55,7 +55,7 @@ export default function BlogPreview() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
             >
-              <Link href={`/blog/${post.slug}`} className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <Link href={`/blog/${post.slug}`} className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={post.image}
@@ -69,11 +69,11 @@ export default function BlogPreview() {
                     {post.tag}
                   </span>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-serif font-bold text-heading group-hover:text-accent transition-colors duration-300">
                     {post.title}
                   </h3>
-                  <p className="mt-3 text-text text-sm leading-relaxed">{post.excerpt}</p>
+                  <p className="mt-3 text-text text-sm leading-relaxed flex-1">{post.excerpt}</p>
                   <div className="mt-4 inline-flex items-center gap-2 text-accent font-medium text-sm">
                     Read Article
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
