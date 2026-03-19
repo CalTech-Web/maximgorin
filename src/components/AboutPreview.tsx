@@ -3,6 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Siren, GraduationCap, Heart } from "lucide-react";
+
+const stats = [
+  { icon: Siren, value: "100+", label: "Ambulances", color: "text-blue-600 bg-blue-50" },
+  { icon: GraduationCap, value: "UCLA", label: "MBA Graduate", color: "text-amber-600 bg-amber-50" },
+  { icon: Heart, value: "20+", label: "Years of Service", color: "text-rose-600 bg-rose-50" },
+];
 
 export default function AboutPreview() {
   return (
@@ -46,19 +53,38 @@ export default function AboutPreview() {
           >
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-3">About</p>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-heading leading-tight">
-              Maxim Gorin
+              Meet Maxim Gorin
             </h2>
+            <p className="mt-2 text-primary-light font-medium">
+              Entrepreneur &bull; EMT &bull; Community Leader
+            </p>
             <p className="mt-6 text-text leading-relaxed">
               In 2002, Max established LifeLine Ambulance in Los Angeles County with minimal startup
-              resources - just six staff members and two ambulances. He actively participated as an
-              EMT, handled dispatch operations, and managed marketing initiatives centered on
-              community emergency response.
+              resources — just six staff members and two ambulances. Today, it operates as
+              California&apos;s sole nonprofit providing complimentary ambulance services, managing
+              over 100 ambulances across Los Angeles County.
             </p>
-            <p className="mt-4 text-text leading-relaxed">
-              Today, LifeLine Ambulance operates as California&apos;s sole nonprofit providing
-              complimentary ambulance services via licensed providers throughout the 20th
-              Congressional District, managing over 100 ambulances across Los Angeles County.
-            </p>
+
+            {/* Mini Stats */}
+            <div className="mt-8 grid grid-cols-3 gap-4">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                  className="text-center"
+                >
+                  <div className={`inline-flex p-2 rounded-lg ${stat.color} mb-2`}>
+                    <stat.icon size={18} />
+                  </div>
+                  <p className="text-xl font-bold text-heading">{stat.value}</p>
+                  <p className="text-xs text-text">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+
             <Link
               href="/about"
               className="inline-block mt-8 px-7 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-light hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
