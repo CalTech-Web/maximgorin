@@ -69,7 +69,10 @@ export const metadata: Metadata = {
     images: ["/images/profile.jpg"],
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
     apple: [{ url: "/favicon.svg" }],
   },
   manifest: "/site.webmanifest",
