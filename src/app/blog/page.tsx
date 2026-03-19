@@ -45,8 +45,18 @@ const posts = [
 ];
 
 export default function BlogPage() {
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://maximgorin.com" },
+      { "@type": "ListItem", position: 2, name: "Blog" },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       {/* Hero Banner */}
       <section className="relative min-h-[400px] flex items-center pt-20 overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-light">
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">

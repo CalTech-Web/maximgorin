@@ -34,6 +34,8 @@ export default function BlogPostLayout({ title, image, imageAlt, children }: Blo
         <ol className="flex items-center gap-2">
           <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
           <li>/</li>
+          <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
+          <li>/</li>
           <li className="text-heading font-medium truncate">{title}</li>
         </ol>
       </nav>
@@ -71,11 +73,11 @@ export default function BlogPostLayout({ title, image, imageAlt, children }: Blo
           {/* Back Link */}
           <div className="mt-14 pt-8 border-t border-gray-200">
             <Link
-              href="/"
+              href="/blog"
               className="inline-flex items-center gap-2 text-primary hover:text-accent font-medium transition-colors"
             >
               <ArrowLeft size={18} />
-              Back to Home
+              Back to Blog
             </Link>
           </div>
         </div>
